@@ -1,6 +1,9 @@
 package com.techelevator;
 
 public class Application {
+    private String department;
+
+
 
     /**
      * The main entry point in the application
