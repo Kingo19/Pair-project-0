@@ -6,11 +6,22 @@ public class Employee {
     private String firstName;
     private String lastName;
     private String email;
-    private static double salary;
+    private double salary;
     private Department department;
     private String hireDate;
-    //Constructor number 1
-    public Employee(long employeeId, String firstName, String email, String lastName, String hireDate, Department department) {
+
+//    STATIC CONSTANT FOR DEFAULT STARTING SALARY
+    private static final double DEFAULT_STARTING_SALARY = 60000.0;
+
+    //Constructor
+    public Employee(long employeeId, String firstName, String lastName, String email, Department department, String hireDate) {
+        this.employeeId = employeeId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.department = department;
+        this.hireDate = hireDate;
+        this.salary = DEFAULT_STARTING_SALARY;
 
     }
     // Getters
@@ -82,9 +93,9 @@ public class Employee {
         return lastName + firstName;
     }
 
-    public double raiseSalary(double percent){
+    public double raiseSalary(double percent) {
+        salary *= (1 + (percent / 100));
         return salary;
-
     }
 
 }

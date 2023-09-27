@@ -5,9 +5,14 @@ public class Department {
     private String name;
     private int departmentID;
 
-    public Department(String name, int departmentID) {
+//    CONSTRUCTOR
+
+    public Department(int departmentID, String name) {
+        this.departmentID = departmentID;
+        this.name = name;
 
     }
+//    GETTER AND SETTER
 
     public String getName() {
         return name;
